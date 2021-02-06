@@ -16,5 +16,6 @@ export default function App() {
     // <DogEnergyLevelSelectionScreen />
     // <DogColorSelectionScreen />
     <DogTypeSelectionScreen />
+    // <DogColorSelectionScreen />
   );
 }
