@@ -9,7 +9,7 @@ import {
   ScrollView,
 } from "react-native";
 
-export default function App() {
+const ProfileScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -26,7 +26,7 @@ export default function App() {
           <Text style={styles.about}>About Us</Text>
           <View style={styles.profileImage}>
             <Image
-              source={require("./assets/profile/about-us-2.jpg")}
+              source={require("../../assets/profile/about-us-2.jpg")}
               style={styles.image}
             ></Image>
           </View>
@@ -39,7 +39,7 @@ export default function App() {
         <View style={{ alignSelf: "center" }}>
           <View style={styles.profileImage}>
             <Image
-              source={require("./assets/profile/about-us-1.jpg")}
+              source={require("../../assets/profile/about-us-1.jpg")}
               style={styles.image}
             ></Image>
           </View>
@@ -51,7 +51,7 @@ export default function App() {
       </ScrollView>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -103,3 +103,5 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
 });
+
+export default ProfileScreen;
