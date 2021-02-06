@@ -1,11 +1,29 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
-import WelcomeScreen from "./src/screens/WelcomeScreen";
-import HomeScreen from "./src/screens/HomeScreen";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+
+import HomeStack from "./src/routes/HomeStack";
+import ProfileStack from "./src/routes/ProfileStack";
+
+const Tabs = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
+
+const TabsScreen = () => (
+  <Tabs.Navigator>
+    <Tabs.Screen name="Home" component={HomeStack} />
+    <Tabs.Screen name="Search" component={ProfileStack} />
+  </Tabs.Navigator>
+);
+
 export default function App() {
   return (
-    <WelcomeScreen />
-    //<HomeScreen />
+    <NavigationContainer>
+      <Drawer.Navigator>
+        <Drawer.Screen name="Home" component={TabsScreen} />
+        <Drawer.Screen name="About Us" component={ProfileStack} />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 }
