@@ -1,9 +1,16 @@
 import React from "react";
-import { Button, Image, ImageBackground, StyleSheet, Text, View } from "react-native";
+import {
+  Button,
+  Image,
+  ImageBackground,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 
-import colors from '../config/colors';
+import colors from "../config/colors";
 
-function WelcomeScreen(props) {
+const WelcomeScreen = ({ navigation }) => {
   return (
     <ImageBackground
       style={styles.background}
@@ -14,14 +21,17 @@ function WelcomeScreen(props) {
         <Text>Welcome to the Doggy App</Text>
         <Text>Register to see cute dogs</Text>
       </View>
-      
+
       <View style={styles.loginButton}>
-          <Button title="Home Screen" onPress={() => console.log("Click")}/>
+        <Button
+          title="Home Screen"
+          onPress={() => navigation.navigate("HomeScreen", { name: "Home" })}
+        />
       </View>
       <View style={styles.signInButton}></View>
     </ImageBackground>
   );
-}
+};
 
 const styles = StyleSheet.create({
   background: {
@@ -41,7 +51,7 @@ const styles = StyleSheet.create({
   logoContainer: {
     position: "absolute",
     top: 80,
-    alignItems: "center"
+    alignItems: "center",
   },
   signInButton: {
     width: "100%",
