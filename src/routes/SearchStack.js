@@ -7,7 +7,7 @@ import colors from "../config/colors";
 
 const Stack = createStackNavigator();
 
-export default HomeStack = ({ navigation }) => {
+const SearchStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -19,15 +19,17 @@ export default HomeStack = ({ navigation }) => {
       }}
     >
       <Stack.Screen
-        name="HomeScreen"
-        component={HomeScreen}
-        options={{ title: "Home" }}
-      />
-      <Stack.Screen
         name="SearchScreen"
         component={SearchScreen}
         options={{ title: "Search" }}
       />
+      <Stack.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{ title: "Home" }}
+      />
     </Stack.Navigator>
   );
 };
+
+export default SearchStack;
