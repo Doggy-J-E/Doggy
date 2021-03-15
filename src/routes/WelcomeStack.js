@@ -1,33 +1,35 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from "@react-navigation/native";
 
 import HomeScreen from "../screens/HomeScreen";
 import WelcomeScreen from "../screens/WelcomeScreen";
-import ProfileScreen from "../screens/ProfileScreen";
+import colors from "../config/colors";
 
 const Stack = createStackNavigator();
 
-export default WelcomeStack = () => {
+const WelcomeStack = () => {
   return (
-    <NavigationContainer initialRouteName="WelcomeScreen">
-      <Stack.Navigator>
-        <Stack.Screen
-          name="WelcomeScreen"
-          component={WelcomeScreen}
-          options={{ title: "Welcome" }}
-        />
-        <Stack.Screen
-          name="HomeScreen"
-          component={HomeScreen}
-          options={{ title: "Home" }}
-        />
-        <Stack.Screen
-          name="ProfileScreen"
-          component={ProfileScreen}
-          options={{ title: "About Us" }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: colors.lightOrange,
+        },
+        headerTintColor: colors.white,
+        headerTitleAlign: "center",
+      }}
+    >
+      <Stack.Screen
+        name="WelcomeScreen"
+        component={WelcomeScreen}
+        options={{ title: "Welcome" }}
+      />
+      <Stack.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{ title: "Home" }}
+      />
+    </Stack.Navigator>
   );
 };
+
+export default WelcomeStack;
