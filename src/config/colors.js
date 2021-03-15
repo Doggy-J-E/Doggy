@@ -1,6 +1,8 @@
-export default{
-    //We can add the colors we are going to use for the app here
-    primary: 'red',
-    secondary: 'blue',
-    black: '#000'
-}
+export default {
+  black: "#000",
+  white: "#FFFFFF",
+  darkOrange: "#FF9F1C", // Orange Peel
+  lightOrange: "#FFBF69", //Mellow Apricot
+  lightCyan: "CBF3F0", //Light Cyan
+  darkCyan: "2EC4B6", //Tiffany Blue
+};
