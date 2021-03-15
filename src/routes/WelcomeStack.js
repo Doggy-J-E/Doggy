@@ -21,7 +21,7 @@ const WelcomeStack = () => {
       <Stack.Screen
         name="WelcomeScreen"
         component={WelcomeScreen}
-        options={{ title: "Welcome" }}
+        options={{ title: "Welcome", headerShown: false }}
       />
       <Stack.Screen
         name="HomeScreen"

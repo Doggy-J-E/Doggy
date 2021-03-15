@@ -11,7 +11,7 @@ const WelcomeScreen = ({ navigation }) => {
       source={require("../../assets/background-image.jpg")}
     >
       <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={require("../../assets/icon.png")} />
+        <Image style={styles.logo} source={require("../../assets/logo.png")} />
         <Text style={styles.textTitle}>Welcome to Doggy</Text>
         <Text style={styles.textDescription}>
           Search for cute dogs by their breed type.
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     padding: "2%",
   },
   logo: {
-    width: "33%",
+    width: "45%",
     height: "110%",
   },
   logoContainer: {
