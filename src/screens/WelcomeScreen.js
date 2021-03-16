@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
   },
   textButton: {
     fontSize: 20,
-    textAlign: "center",
   },
   button: {
     width: "55%",
@@ -56,6 +55,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     alignItems: "center",
     padding: "2%",
+    justifyContent: "center",
   },
   logo: {
     width: "45%",
