@@ -1,12 +1,6 @@
 import React from "react";
-import {
-  Button,
-  Image,
-  ImageBackground,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 import colors from "../config/colors";
 
@@ -17,18 +11,21 @@ const WelcomeScreen = ({ navigation }) => {
       source={require("../../assets/background-image.jpg")}
     >
       <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={require("../../assets/icon.png")} />
-        <Text>Welcome to the Doggy App</Text>
-        <Text>Register to see cute dogs</Text>
+        <Image style={styles.logo} source={require("../../assets/logo.png")} />
+        <Text style={styles.textTitle}>Welcome to Doggy</Text>
+        <Text style={styles.textDescription}>
+          Search for cute dogs by their breed type.
+          {"\n"} Click let's start to find cute dogs!
+        </Text>
       </View>
 
-      <View style={styles.loginButton}>
-        <Button
-          title="Home Screen"
+      <View style={styles.button}>
+        <TouchableOpacity
           onPress={() => navigation.navigate("HomeScreen", { name: "Home" })}
-        />
+        >
+          <Text style={styles.textButton}>Let's Start</Text>
+        </TouchableOpacity>
       </View>
-      <View style={styles.signInButton}></View>
     </ImageBackground>
   );
 };
@@ -39,24 +36,35 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "center",
   },
-  loginButton: {
-    width: "100%",
-    height: 30,
-    backgroundColor: colors.primary,
+  textTitle: {
+    fontSize: 30,
+    fontWeight: "bold",
+  },
+  textDescription: {
+    fontSize: 18,
+    textAlign: "center",
+  },
+  textButton: {
+    fontSize: 20,
+  },
+  button: {
+    width: "55%",
+    height: "8%",
+    backgroundColor: colors.lightOrange,
+    bottom: "20%",
+    borderRadius: 30,
+    alignItems: "center",
+    padding: "2%",
+    justifyContent: "center",
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: "45%",
+    height: "110%",
   },
   logoContainer: {
     position: "absolute",
-    top: 80,
+    top: "15%",
     alignItems: "center",
-  },
-  signInButton: {
-    width: "100%",
-    height: 70,
-    backgroundColor: "blue",
   },
 });
 
