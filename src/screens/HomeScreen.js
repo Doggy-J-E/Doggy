@@ -3,6 +3,8 @@ import { StyleSheet, ImageBackground } from "react-native";
 import { SearchBar } from "react-native-elements";
 
 import screen from "../config/screen";
+import colors from "../config/colors";
+import { scale, moderateScale, verticalScale } from "../config/scaling";
 
 const HomeScreen = ({ navigation }) => {
   const [search, setSearch] = useState("");
@@ -24,12 +26,12 @@ const HomeScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   searchBar: {
-    marginTop: "20%",
-    width: "95%",
+    marginTop: verticalScale(70),
+    width: moderateScale(330, 0.4),
     alignSelf: "center",
   },
   input: {
-    backgroundColor: "white",
+    backgroundColor: colors.white,
   },
 });
 export default HomeScreen;
