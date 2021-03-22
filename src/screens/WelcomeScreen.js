@@ -2,6 +2,7 @@ import React from "react";
 import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
+import { scale, moderateScale, verticalScale } from "../config/scaling";
 import colors from "../config/colors";
 
 const WelcomeScreen = ({ navigation }) => {
@@ -37,33 +38,32 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   textTitle: {
-    fontSize: 30,
+    fontSize: moderateScale(33),
     fontWeight: "bold",
   },
   textDescription: {
-    fontSize: 18,
+    fontSize: moderateScale(18),
     textAlign: "center",
   },
   textButton: {
-    fontSize: 20,
+    fontSize: moderateScale(18),
   },
   button: {
-    width: "55%",
-    height: "8%",
+    width: scale(200),
+    height: verticalScale(55),
     backgroundColor: colors.lightOrange,
-    bottom: "20%",
-    borderRadius: 30,
+    bottom: scale(125),
+    borderRadius: moderateScale(100),
     alignItems: "center",
-    padding: "2%",
     justifyContent: "center",
   },
   logo: {
-    width: "45%",
-    height: "110%",
+    width: scale(145),
+    height: verticalScale(95),
   },
   logoContainer: {
     position: "absolute",
-    top: "15%",
+    top: verticalScale(120),
     alignItems: "center",
   },
 });
