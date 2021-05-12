@@ -20,7 +20,6 @@ const HomeScreen = ({ navigation }) => {
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
   const [isLoading, setLoading] = useState(true);
-  const [imageArr, setImageArr] = useState([]);
 
   useEffect(() => {
     getSearchResultFromApi();
@@ -28,7 +27,6 @@ const HomeScreen = ({ navigation }) => {
 
   const getSearchResultFromApi = async () => {
     await getBreadInfoFromApi();
-    //await getImage();
   };
   const getBreadInfoFromApi = async () => {
     fetch("https://api.thedogapi.com/v1/breeds")
@@ -40,21 +38,6 @@ const HomeScreen = ({ navigation }) => {
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   };
-
-  // const getImage = async () => {
-  //   //console.log("start get image");
-  //   for (let i = 0; i < search.length; i++) {
-  //     let imageApi = "https://api.thedogapi.com/v1/images/";
-  //     imageApi += search[i].reference_image_id;
-  //     fetch(imageApi)
-  //       .then((response) => response.json())
-  //       .then((json) => {
-  //         setImageArr((imageArr) => imageArr.concat(json.url));
-  //       })
-  //       .catch((error) => console.error(error))
-  //       .finally(() => setLoading(false));
-  //   }
-  // };
 
   const searchFilterFunction = (text) => {
     // Check if searched text is not blank
@@ -78,7 +61,7 @@ const HomeScreen = ({ navigation }) => {
       <View key={index} style={styles.recordContainer}>
         <TouchableOpacity onPress={() => getItem(item)}>
           <View style={styles.row}>
-            {/* <Image style={styles.image} source={{ uri: imageArr[index] }} /> */}
+            <Image style={styles.image} source={{ uri: item.image.url }} />
             <View style={styles.recordTextConteiner}>
               <Text style={styles.name}>{item.name}</Text>
               <Text style={styles.origin}>Origin: {item.origin}</Text>
