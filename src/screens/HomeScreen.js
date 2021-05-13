@@ -9,12 +9,12 @@ import {
 } from "react-native";
 import { SearchBar } from "react-native-elements";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { ActivityIndicator } from "react-native-paper";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 import colors from "../config/colors";
 import { scale, moderateScale, verticalScale } from "../config/scaling";
 import screen from "../config/screen";
+import Loading from "../component/Loading";
 
 const HomeScreen = ({ navigation }) => {
   const [search, setSearch] = useState("");
@@ -94,7 +94,7 @@ const HomeScreen = ({ navigation }) => {
   return (
     <View style={screen.container}>
       {isLoading ? (
-        <ActivityIndicator />
+        <Loading preLoaderVisible={isLoading} />
       ) : (
         <SafeAreaView style={screen.container}>
           <SearchBar
