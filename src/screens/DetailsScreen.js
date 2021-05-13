@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
   },
   image: {
     alignSelf: "center",
+    resizeMode: "stretch",
     width: scale(320),
     height: verticalScale(230),
     marginTop: verticalScale(5),

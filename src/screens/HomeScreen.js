@@ -69,7 +69,8 @@ const HomeScreen = ({ navigation }) => {
         >
           <View style={styles.row}>
             <Image style={styles.image} source={{ uri: item.image.url }} />
-            <View style={styles.recordTextConteiner}>
+
+            <View style={styles.recordTextContainer}>
               <Text style={styles.name}>{item.name}</Text>
               <Text numberOfLines={3}>{item.temperament}</Text>
             </View>
@@ -141,7 +142,9 @@ const styles = StyleSheet.create({
     backgroundColor: colors.grey,
     borderRadius: moderateScale(10),
   },
-  recordTextConteiner: {
+  recordTextContainer: {
+    width: scale(200),
+    height: verticalScale(100),
     marginLeft: scale(10),
     marginRight: scale(10),
     marginTop: verticalScale(5),
@@ -156,9 +159,10 @@ const styles = StyleSheet.create({
   image: {
     width: scale(90),
     height: verticalScale(90),
+    resizeMode: "stretch",
     marginLeft: moderateScale(6),
     marginTop: moderateScale(10),
-    borderRadius: moderateScale(15),
+    borderRadius: moderateScale(10),
   },
   icon: {
     alignSelf: "center",
