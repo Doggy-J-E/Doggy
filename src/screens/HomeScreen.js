@@ -121,24 +121,24 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   search: {
     backgroundColor: colors.lightOrange,
-    marginBottom: moderateScale(5),
-    marginTop: moderateScale(5),
+    marginBottom: verticalScale(5),
+    marginTop: verticalScale(5),
   },
   listContainer: {
     margin: moderateScale(10),
   },
   recordContainer: {
-    width: moderateScale(360),
-    height: moderateScale(110),
-    marginLeft: moderateScale(7),
-    marginBottom: moderateScale(10),
+    alignSelf: "center",
+    width: scale(335),
+    height: verticalScale(110),
+    marginBottom: verticalScale(10),
     backgroundColor: colors.grey,
     borderRadius: moderateScale(10),
   },
   recordTextConteiner: {
-    marginLeft: moderateScale(10),
-    marginRight: moderateScale(10),
-    marginTop: moderateScale(5),
+    marginLeft: scale(10),
+    marginRight: scale(10),
+    marginTop: verticalScale(5),
     flexDirection: "column",
     justifyContent: "center",
     flexGrow: 1,
@@ -149,15 +149,14 @@ const styles = StyleSheet.create({
   },
   image: {
     width: scale(90),
-    height: moderateScale(90),
+    height: verticalScale(90),
     marginLeft: moderateScale(6),
-    marginTop: moderateScale(11),
-    marginBottom: moderateScale(5),
+    marginTop: moderateScale(10),
     borderRadius: moderateScale(15),
   },
   icon: {
     alignSelf: "center",
-    marginRight: moderateScale(5),
+    marginRight: scale(5),
   },
   name: {
     fontSize: moderateScale(20),
