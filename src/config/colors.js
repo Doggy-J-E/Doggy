@@ -5,4 +5,5 @@ export default {
   lightOrange: "#FFBF69", //Mellow Apricot
   lightCyan: "#CBF3F0", //Light Cyan
   darkCyan: "#2EC4B6", //Tiffany Blue
+  grey: "#F8F9FA",
 };
