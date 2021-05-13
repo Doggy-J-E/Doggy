@@ -5,12 +5,12 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 
 import Indicator from "./Indicator";
 import colors from "../config/colors";
-import { scale, moderateScale, verticalScale } from "../config/scaling";
+import { moderateScale } from "../config/scaling";
 
 //Code from https://github.com/n4kz/react-native-indicators
 //Partially change the design
 
-export default class DotIndicator extends PureComponent {
+export default class Loading extends PureComponent {
   static defaultProps = {
     animationEasing: Easing.inOut(Easing.ease),
 
