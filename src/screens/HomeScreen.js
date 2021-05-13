@@ -60,7 +60,13 @@ const HomeScreen = ({ navigation }) => {
   const ItemView = ({ item, index }) => {
     return (
       <View key={index} style={styles.recordContainer}>
-        <TouchableOpacity onPress={() => getItem(item)}>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate("DetailsScreen", {
+              dogInfo: item,
+            })
+          }
+        >
           <View style={styles.row}>
             <Image style={styles.image} source={{ uri: item.image.url }} />
             <View style={styles.recordTextConteiner}>
