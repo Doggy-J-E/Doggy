@@ -3,6 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import HomeScreen from "../screens/HomeScreen";
 import WelcomeScreen from "../screens/WelcomeScreen";
+import DetailsScreen from "../screens/DetailsScreen";
 import colors from "../config/colors";
 
 const Stack = createStackNavigator();
@@ -27,6 +28,11 @@ const WelcomeStack = () => {
         name="HomeScreen"
         component={HomeScreen}
         options={{ title: "Home" }}
+      />
+      <Stack.Screen
+        name="DetailsScreen"
+        component={DetailsScreen}
+        options={{ title: "DetailsScreen" }}
       />
     </Stack.Navigator>
   );
