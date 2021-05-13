@@ -10,6 +10,7 @@ import {
 import { SearchBar } from "react-native-elements";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { ActivityIndicator } from "react-native-paper";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 import colors from "../config/colors";
 import { scale, moderateScale, verticalScale } from "../config/scaling";
@@ -44,7 +45,7 @@ const HomeScreen = ({ navigation }) => {
   // const getImage = async () => {
   //   //console.log("start get image");
   //   for (let i = 0; i < search.length; i++) {
-  //     let imageApi = "https://api.thedogapi.com/v1/images/";
+  //     let imageApi = "https://api.thedogapi.com/v1/images/search";
   //     imageApi += search[i].reference_image_id;
   //     fetch(imageApi)
   //       .then((response) => response.json())
@@ -78,12 +79,17 @@ const HomeScreen = ({ navigation }) => {
       <View key={index} style={styles.recordContainer}>
         <TouchableOpacity onPress={() => getItem(item)}>
           <View style={styles.row}>
-            {/* <Image style={styles.image} source={{ uri: imageArr[index] }} /> */}
+            <Image style={styles.image} source={{ uri: item.image.url }} />
             <View style={styles.recordTextConteiner}>
               <Text style={styles.name}>{item.name}</Text>
-              <Text style={styles.origin}>Origin: {item.origin}</Text>
-              <Text>Life Span: {item.life_span}</Text>
               <Text numberOfLines={3}>{item.temperament}</Text>
+            </View>
+            <View style={styles.icon}>
+              <Ionicons
+                name={"chevron-forward-outline"}
+                color={colors.darkOrange}
+                size={moderateScale(25)}
+              />
             </View>
           </View>
         </TouchableOpacity>
@@ -101,12 +107,12 @@ const HomeScreen = ({ navigation }) => {
       {isLoading ? (
         <ActivityIndicator />
       ) : (
-        <SafeAreaView style={{ flex: 1 }}>
+        <SafeAreaView style={screen.container}>
           <SearchBar
             round
             lightTheme
             containerStyle={styles.search}
-            inputContainerStyle={{ backgroundColor: colors.white }}
+            inputContainerStyle={{ backgroundColor: colors.grey }}
             onChangeText={(text) => searchFilterFunction(text)}
             onClear={(text) => searchFilterFunction("")}
             placeholder="Search something like: Golden"
@@ -133,32 +139,44 @@ const styles = StyleSheet.create({
     margin: moderateScale(10),
   },
   recordContainer: {
-    width: verticalScale(390),
-    height: scale(120),
+    width: moderateScale(360),
+    height: moderateScale(110),
+    marginLeft: moderateScale(7),
     marginBottom: moderateScale(10),
-    backgroundColor: colors.lightOrange,
+    backgroundColor: colors.grey,
+    borderRadius: moderateScale(10),
   },
   recordTextConteiner: {
     marginLeft: moderateScale(10),
     marginRight: moderateScale(10),
     marginTop: moderateScale(5),
+    flexDirection: "column",
+    justifyContent: "center",
+    flexGrow: 1,
+    width: 0,
   },
   row: {
     flexDirection: "row",
   },
   image: {
-    width: verticalScale(108),
-    height: scale(90),
+    width: scale(90),
+    height: moderateScale(90),
     marginLeft: moderateScale(6),
-    marginTop: scale(5),
+    marginTop: moderateScale(11),
+    marginBottom: moderateScale(5),
+    borderRadius: moderateScale(15),
+  },
+  icon: {
+    marginTop: moderateScale(60),
+    marginRight: moderateScale(5),
   },
   name: {
-    fontSize: moderateScale(25),
-    color: colors.white,
+    fontSize: moderateScale(20),
+    color: colors.darkOrange,
     fontWeight: "bold",
   },
   origin: {
-    fontSize: moderateScale(18),
+    fontSize: moderateScale(15),
   },
 });
 
