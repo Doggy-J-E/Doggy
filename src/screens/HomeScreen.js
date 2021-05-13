@@ -172,7 +172,6 @@ const styles = StyleSheet.create({
   },
   noResult: {
     alignItems: "center",
-    marginTop: verticalScale(60),
     justifyContent: "center",
     flex: 1,
   },
