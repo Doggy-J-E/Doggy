@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
     borderRadius: moderateScale(15),
   },
   icon: {
-    marginTop: moderateScale(60),
+    alignSelf: "center",
     marginRight: moderateScale(5),
   },
   name: {
