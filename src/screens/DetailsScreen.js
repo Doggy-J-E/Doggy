@@ -1,6 +1,5 @@
 import React from "react";
-import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { Image, StyleSheet, Text, View, ScrollView } from "react-native";
 
 import { scale, moderateScale, verticalScale } from "../config/scaling";
 import colors from "../config/colors";
@@ -24,7 +23,7 @@ const DetailsScreen = ({ route, navigation }) => {
         </View>
 
         <Image style={styles.image} source={{ uri: dogInfo.image.url }} />
-        <View style={styles.dogInfoContainer}>
+        <ScrollView style={styles.dogInfoContainer}>
           <View style={styles.row}>
             <Text style={styles.titleTextStyle}>Origin: </Text>
             <Text style={styles.contentTextStyle}>
@@ -45,7 +44,7 @@ const DetailsScreen = ({ route, navigation }) => {
           </View>
           <View style={styles.row}>
             <Text style={styles.titleTextStyle}>Bred for: </Text>
-            <Text style={styles.contentTextStyle}>
+            <Text style={styles.bredContainer}>
               {renderContent(dogInfo.bred_for)}
             </Text>
           </View>
@@ -65,7 +64,7 @@ const DetailsScreen = ({ route, navigation }) => {
               <Text style={styles.contentTextStyle}>{dogInfo.temperament}</Text>
             </View>
           </View>
-        </View>
+        </ScrollView>
       </View>
     </View>
   );
@@ -73,24 +72,20 @@ const DetailsScreen = ({ route, navigation }) => {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    marginTop: moderateScale(7),
+    marginTop: verticalScale(7),
   },
   dogInfoContainer: {
     alignSelf: "center",
-    width: verticalScale(350),
-    marginTop: moderateScale(5),
+    width: scale(300),
+    marginTop: verticalScale(10),
   },
   row: {
     flexDirection: "row",
     marginTop: moderateScale(5),
   },
-  widthHeightContainer: {
-    width: verticalScale(180),
-    alignItems: "center",
-  },
   nameContainer: {
     alignSelf: "center",
-    width: verticalScale(350),
+    width: scale(320),
   },
   nameTextStyle: {
     textAlign: "center",
@@ -100,10 +95,9 @@ const styles = StyleSheet.create({
   },
   image: {
     alignSelf: "center",
-    width: verticalScale(350),
-    height: scale(230),
-    marginLeft: moderateScale(6),
-    marginTop: scale(5),
+    width: scale(320),
+    height: verticalScale(230),
+    marginTop: verticalScale(5),
     borderRadius: moderateScale(10),
   },
   titleTextStyle: {
@@ -113,8 +107,12 @@ const styles = StyleSheet.create({
   contentTextStyle: {
     fontSize: moderateScale(15),
   },
+  bredContainer: {
+    width: scale(250),
+    fontSize: moderateScale(15),
+  },
   temperamentContainer: {
-    width: verticalScale(240),
+    width: scale(205),
   },
 });
 
