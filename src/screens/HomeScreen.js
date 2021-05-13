@@ -71,7 +71,9 @@ const HomeScreen = ({ navigation }) => {
             <Image style={styles.image} source={{ uri: item.image.url }} />
             <View style={styles.recordTextConteiner}>
               <Text style={styles.name}>{item.name}</Text>
-              <Text numberOfLines={3}>{item.temperament}</Text>
+              <Text numberOfLines={3} style={styles.temperament}>
+                {item.temperament}
+              </Text>
             </View>
             <View style={styles.icon}>
               <Ionicons
@@ -167,7 +169,7 @@ const styles = StyleSheet.create({
   name: {
     fontSize: moderateScale(20),
     color: colors.darkOrange,
-    fontWeight: "bold",
+    fontFamily: "ubuntu-bold",
   },
   noResult: {
     alignItems: "center",
@@ -179,8 +181,9 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: colors.grey,
   },
-  origin: {
-    fontSize: moderateScale(15),
+  temperament: {
+    fontSize: moderateScale(13),
+    fontFamily: "nunito-regular",
   },
 });
 
