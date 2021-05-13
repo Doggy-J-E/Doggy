@@ -86,11 +86,6 @@ const HomeScreen = ({ navigation }) => {
     );
   };
 
-  const getItem = (item) => {
-    //Maybe redirect to the details page
-    alert("Id : " + item.id + " Name : " + item.name);
-  };
-
   return (
     <View style={screen.container}>
       {isLoading ? (
@@ -107,11 +102,22 @@ const HomeScreen = ({ navigation }) => {
             placeholder="Search something like: Golden"
             value={search}
           />
-          <FlatList
-            data={filteredDataSource}
-            keyExtractor={(item, index) => index.toString()}
-            renderItem={ItemView}
-          />
+          {filteredDataSource.length === 0 ? (
+            <View style={styles.noResult}>
+              <Ionicons
+                name={"paw-outline"}
+                color={colors.grey}
+                size={moderateScale(90)}
+              />
+              <Text style={styles.noResultText}>Sorry, no results found</Text>
+            </View>
+          ) : (
+            <FlatList
+              data={filteredDataSource}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={ItemView}
+            />
+          )}
         </SafeAreaView>
       )}
     </View>
@@ -162,6 +168,16 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(20),
     color: colors.darkOrange,
     fontWeight: "bold",
+  },
+  noResult: {
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1,
+  },
+  noResultText: {
+    fontSize: moderateScale(40),
+    textAlign: "center",
+    color: colors.grey,
   },
   origin: {
     fontSize: moderateScale(15),
