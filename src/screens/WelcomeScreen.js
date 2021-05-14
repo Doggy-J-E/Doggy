@@ -27,6 +27,16 @@ const WelcomeScreen = ({ navigation }) => {
           <Text style={styles.textButton}>Let's Start</Text>
         </TouchableOpacity>
       </View>
+
+      <View style={styles.termsContainer}>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate("TermsConditionScreen", { name: "Terms" })
+          }
+        >
+          <Text style={styles.termsText}>Terms and Condition</Text>
+        </TouchableOpacity>
+      </View>
     </ImageBackground>
   );
 };
@@ -65,6 +75,12 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: verticalScale(120),
     alignItems: "center",
+  },
+  termsContainer: {
+    bottom: verticalScale(120),
+  },
+  termsText: {
+    fontSize: moderateScale(14),
   },
 });
 

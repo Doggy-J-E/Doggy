@@ -5,6 +5,7 @@ import HomeScreen from "../screens/HomeScreen";
 import WelcomeScreen from "../screens/WelcomeScreen";
 import DetailsScreen from "../screens/DetailsScreen";
 import colors from "../config/colors";
+import TermsConditionScreen from "../screens/TermsConditionScreen";
 
 const Stack = createStackNavigator();
 
@@ -33,6 +34,11 @@ const WelcomeStack = () => {
         name="DetailsScreen"
         component={DetailsScreen}
         options={{ title: "DetailsScreen" }}
+      />
+      <Stack.Screen
+        name="TermsConditionScreen"
+        component={TermsConditionScreen}
+        options={{ title: "Terms and Condition" }}
       />
     </Stack.Navigator>
   );
