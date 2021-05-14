@@ -15,15 +15,10 @@ export default function App() {
   }, []);
 
   let [fontsLoaded] = useFonts({
+    "ubuntu-regular": require("./assets/fonts/Ubuntu-Regular.ttf"),
     "nunito-bold": require("./assets/fonts/Nunito-Bold.ttf"),
-    "nunito-italic": require("./assets/fonts/Nunito-Italic.ttf"),
-    "nunito-light": require("./assets/fonts/Nunito-Light.ttf"),
     "nunito-regular": require("./assets/fonts/Nunito-Regular.ttf"),
     "ubuntu-bold": require("./assets/fonts/Ubuntu-Bold.ttf"),
-    "ubuntu-italic": require("./assets/fonts/Ubuntu-Italic.ttf"),
-    "ubuntu-light": require("./assets/fonts/Ubuntu-Light.ttf"),
-    "ubuntu-medium": require("./assets/fonts/Ubuntu-Medium.ttf"),
-    "ubuntu-regular": require("./assets/fonts/Ubuntu-Regular.ttf"),
   });
 
   if (!fontsLoaded) {
