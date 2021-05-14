@@ -49,15 +49,12 @@ const TermsConditionScreen = ({ navigation }) => {
             with the understanding that we may be unable to provide you with
             some of your desired services.
             {"\n\n"}
-            This app uses an external API to render all the dog information. We
-            are not responsible for the naming, traits and information that you
-            encounter in this app. For more information,
-            https://www.thedogapi.com/
-            {"\n\n"}
-            All icons used in this app can be found
-            (https://ionic.io/ionicons/v4). The logo was created using a tool
-            (https://www.freelogodesign.org/). All background images can be
-            found (https://www.pexels.com/).
+            This application uses an external API to render all the dog
+            information. We are not responsible for the naming, traits and
+            information that you encounter in this app. For more information
+            visit the following website: https://www.thedogapi.com/ . All icons
+            used in this app can be found on the following website:
+            https://ionic.io/ionicons/v4
             {"\n\n"}
             Your continued use of our application will be regarded as acceptance
             of our practices around privacy and personal information. If you
