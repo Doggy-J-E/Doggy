@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { AuthContext } from "./src/config/context";
 
-import WelcomeStack from "./src/routes/WelcomeStack";
+import TermsStack from "./src/routes/TermsStack";
 import HomeStack from "./src/routes/HomeStack";
 import Loading from "./src/screens/LoadingScreen";
 
@@ -41,7 +41,7 @@ export default function App() {
     return (
       <AuthContext.Provider value={authContext}>
         <NavigationContainer>
-          {userToken ? <HomeStack /> : <WelcomeStack />}
+          {userToken ? <HomeStack /> : <TermsStack />}
         </NavigationContainer>
       </AuthContext.Provider>
     );
