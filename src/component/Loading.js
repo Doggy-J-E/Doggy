@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 import React, { PureComponent } from "react";
-import { Animated, Easing, StyleSheet, View, Text } from "react-native";
+import { Animated, Easing, StyleSheet, View, Text, Image } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 import Indicator from "./Indicator";
 import colors from "../config/colors";
-import { moderateScale } from "../config/scaling";
+import { moderateScale, scale, verticalScale } from "../config/scaling";
 
 //Code from https://github.com/n4kz/react-native-indicators
 //Partially change the design
@@ -65,10 +65,9 @@ export default class Loading extends PureComponent {
 
     return (
       <View style={styles.container}>
-        <Ionicons
-          name={"paw-outline"}
-          color={colors.grey}
-          size={moderateScale(90)}
+        <Image
+          style={styles.image}
+          source={require("../../assets/doggy_logo_grey.png")}
         />
         <Indicator
           style={[styles.containerIndicator, style]}
@@ -95,6 +94,9 @@ const styles = StyleSheet.create({
   text: {
     fontSize: moderateScale(18),
     color: colors.grey,
-    fontFamily: "ubuntu-regular",
+  },
+  image: {
+    width: scale(120),
+    height: verticalScale(120),
   },
 });
