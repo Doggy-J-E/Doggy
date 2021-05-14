@@ -4,8 +4,11 @@ import { StyleSheet, Text, View, ScrollView } from "react-native";
 import { scale, moderateScale, verticalScale } from "../config/scaling";
 import colors from "../config/colors";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { AuthContext } from "../config/context";
 
 const TermsConditionScreen = ({ navigation }) => {
+  const { signIn } = React.useContext(AuthContext);
+
   return (
     <ScrollView style={styles.container}>
       <View style={styles.welcome}>
@@ -68,7 +71,10 @@ const TermsConditionScreen = ({ navigation }) => {
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity
-          onPress={() => navigation.navigate("HomeScreen", { name: "Home" })}
+          onPress={
+            () => signIn()
+            //navigation.navigate("HomeScreen", { name: "Home" })
+          }
         >
           <Text style={styles.buttonText}> Accept</Text>
         </TouchableOpacity>
