@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(15),
   },
   temperamentContainer: {
-    width: scale(205),
+    width: scale(195),
   },
 });
 
