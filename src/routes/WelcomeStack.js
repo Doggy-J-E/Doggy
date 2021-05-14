@@ -14,7 +14,7 @@ const MyCustomHeader = () => (
     style={{
       width: scale(30),
       height: verticalScale(30),
-      marginRight: scale(119),
+      marginRight: scale(115),
       marginTop: verticalScale(10),
     }}
   />
