@@ -106,14 +106,13 @@ const HomeScreen = ({ navigation }) => {
             value={search}
           />
           {filteredDataSource.length === 0 ? (
-            <View style={styles.noResult}>
-              <Ionicons
-                name={"paw-outline"}
-                color={colors.grey}
-                size={moderateScale(90)}
+            <SafeAreaView style={styles.noResult}>
+              <Image
+                style={styles.noResultImage}
+                source={require("../../assets/doggy_logo_grey.png")}
               />
               <Text style={styles.noResultText}>Sorry, no results found</Text>
-            </View>
+            </SafeAreaView>
           ) : (
             <FlatList
               data={filteredDataSource}
@@ -184,6 +183,10 @@ const styles = StyleSheet.create({
     fontSize: moderateScale(40),
     textAlign: "center",
     color: colors.grey,
+  },
+  noResultImage: {
+    width: scale(180),
+    height: verticalScale(180),
   },
   temperament: {
     fontSize: moderateScale(13),

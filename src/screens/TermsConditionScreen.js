@@ -67,7 +67,9 @@ const TermsConditionScreen = ({ navigation }) => {
       </View>
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("HomeScreen", { name: "Home" })}
+        >
           <Text style={styles.buttonText}> Accept</Text>
         </TouchableOpacity>
       </View>
@@ -77,7 +79,7 @@ const TermsConditionScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   boxContainer: {
-    marginTop: verticalScale(20),
+    marginTop: verticalScale(10),
     paddingLeft: scale(20),
     paddingRight: scale(20),
   },
@@ -88,14 +90,15 @@ const styles = StyleSheet.create({
     width: scale(100),
     height: verticalScale(40),
     borderRadius: moderateScale(100),
-    backgroundColor: colors.grey,
+    backgroundColor: colors.lightOrange,
     marginBottom: verticalScale(20),
   },
   buttonText: {
     fontSize: moderateScale(15),
+    fontFamily: "ubuntu-bold",
   },
   container: {
-    backgroundColor: colors.lightOrange,
+    backgroundColor: colors.grey,
   },
   terms: {
     elevation: 1,
@@ -104,23 +107,28 @@ const styles = StyleSheet.create({
     marginBottom: verticalScale(16),
     borderRadius: moderateScale(16),
     backgroundColor: colors.grey,
+    borderColor: colors.darkOrange,
+    borderWidth: moderateScale(1),
   },
   termsContent: {
     fontSize: moderateScale(12),
     textAlign: "justify",
     marginTop: verticalScale(10),
+    fontFamily: "nunito-regular",
   },
   termsTitle: {
     fontSize: moderateScale(16),
     alignSelf: "center",
+    fontFamily: "nunito-bold",
   },
   welcome: {
-    marginTop: verticalScale(10),
+    marginTop: verticalScale(20),
     alignItems: "center",
   },
   welcomeText: {
     fontSize: moderateScale(28),
-    color: colors.grey,
+    color: colors.darkOrange,
+    fontFamily: "ubuntu-bold",
   },
 });
 
