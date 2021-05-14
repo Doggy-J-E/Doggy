@@ -10,15 +10,16 @@ const TermsConditionScreen = ({ navigation }) => {
   const { signIn } = React.useContext(AuthContext);
 
   return (
-    <ScrollView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.welcome}>
         <Text style={styles.welcomeText}>Welcome to</Text>
         <Text style={styles.welcomeText}>Doggy!</Text>
       </View>
 
       <View style={styles.boxContainer}>
-        <View style={styles.terms}>
-          <Text style={styles.termsTitle}>Terms & Conditions</Text>
+        <ScrollView style={styles.terms}>
+          <Text style={styles.termsTitle}>{"Terms & Conditions"}</Text>
+
           <Text style={styles.termsContent}>
             Thank you for choosing Doggy!
             {"\n\n"}
@@ -63,7 +64,7 @@ const TermsConditionScreen = ({ navigation }) => {
             {"\n\n"}
             This policy is effective as of May 13 2021.
           </Text>
-        </View>
+        </ScrollView>
       </View>
 
       <View style={styles.buttonContainer}>
@@ -76,37 +77,41 @@ const TermsConditionScreen = ({ navigation }) => {
           <Text style={styles.buttonText}> Accept</Text>
         </TouchableOpacity>
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   boxContainer: {
-    marginTop: verticalScale(10),
-    paddingLeft: scale(20),
-    paddingRight: scale(20),
+    marginTop: verticalScale(5),
+    alignSelf: "center",
+    width: scale(300),
+    height: verticalScale(450),
   },
   buttonContainer: {
     justifyContent: "center",
     alignItems: "center",
     alignSelf: "center",
-    width: scale(100),
+    width: scale(160),
     height: verticalScale(40),
     borderRadius: moderateScale(100),
     backgroundColor: colors.lightOrange,
-    marginBottom: verticalScale(20),
+    marginTop: verticalScale(15),
   },
   buttonText: {
     fontSize: moderateScale(15),
     fontFamily: "ubuntu-bold",
   },
   container: {
+    flex: 1,
     backgroundColor: colors.grey,
   },
   terms: {
     elevation: 1,
-    padding: moderateScale(24),
-    marginTop: verticalScale(16),
+    paddingLeft: moderateScale(24),
+    paddingBottom: moderateScale(24),
+    paddingRight: moderateScale(24),
+    marginTop: verticalScale(8),
     marginBottom: verticalScale(16),
     borderRadius: moderateScale(16),
     backgroundColor: colors.grey,
@@ -120,7 +125,8 @@ const styles = StyleSheet.create({
     fontFamily: "nunito-regular",
   },
   termsTitle: {
-    fontSize: moderateScale(16),
+    marginTop: moderateScale(10),
+    fontSize: moderateScale(18),
     alignSelf: "center",
     fontFamily: "nunito-bold",
   },
