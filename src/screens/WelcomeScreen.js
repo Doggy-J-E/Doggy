@@ -49,14 +49,16 @@ const styles = StyleSheet.create({
   },
   textTitle: {
     fontSize: moderateScale(33),
-    fontWeight: "bold",
+    fontFamily: "ubuntu-bold",
   },
   textDescription: {
     fontSize: moderateScale(18),
     textAlign: "center",
+    fontFamily: "nunito-regular",
   },
   textButton: {
     fontSize: moderateScale(18),
+    fontFamily: "nunito-bold",
   },
   button: {
     width: scale(200),
@@ -68,7 +70,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   logo: {
-    width: scale(145),
+    width: scale(128),
     height: verticalScale(95),
   },
   logoContainer: {

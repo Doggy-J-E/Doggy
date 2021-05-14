@@ -90,11 +90,12 @@ const styles = StyleSheet.create({
   nameTextStyle: {
     textAlign: "center",
     fontSize: moderateScale(30),
-    fontWeight: "bold",
     color: colors.lightOrange,
+    fontFamily: "ubuntu-bold",
   },
   image: {
     alignSelf: "center",
+    resizeMode: "stretch",
     width: scale(320),
     height: verticalScale(230),
     marginTop: verticalScale(5),
@@ -102,10 +103,11 @@ const styles = StyleSheet.create({
   },
   titleTextStyle: {
     fontSize: moderateScale(15),
-    fontWeight: "bold",
+    fontFamily: "nunito-bold",
   },
   contentTextStyle: {
     fontSize: moderateScale(15),
+    fontFamily: "nunito-regular",
   },
   bredContainer: {
     width: scale(250),
