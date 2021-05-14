@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 
 import WelcomeStack from "./src/routes/WelcomeStack";
-import Loading from "./src/component/Loading";
+import Loading from "./src/screens/LoadingScreen";
 
 export default function App() {
   const [isLoading, setIsLoading] = React.useState(true);
