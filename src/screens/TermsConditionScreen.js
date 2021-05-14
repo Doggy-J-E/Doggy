@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     fontFamily: "nunito-bold",
   },
   welcome: {
-    marginTop: verticalScale(20),
+    marginTop: verticalScale(70),
     alignItems: "center",
   },
   welcomeText: {

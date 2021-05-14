@@ -1,10 +1,9 @@
 import React from "react";
 import { Image } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { scale, moderateScale, verticalScale } from "../config/scaling";
+import { scale, verticalScale } from "../config/scaling";
 
 import HomeScreen from "../screens/HomeScreen";
-import WelcomeScreen from "../screens/WelcomeScreen";
 import DetailsScreen from "../screens/DetailsScreen";
 import colors from "../config/colors";
 import TermsConditionScreen from "../screens/TermsConditionScreen";
@@ -41,9 +40,9 @@ const WelcomeStack = () => {
       }}
     >
       <Stack.Screen
-        name="WelcomeScreen"
-        component={WelcomeScreen}
-        options={{ title: "Welcome", headerShown: false }}
+        name="TermsConditionScreen"
+        component={TermsConditionScreen}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="HomeScreen"
@@ -58,11 +57,6 @@ const WelcomeStack = () => {
         name="DetailsScreen"
         component={DetailsScreen}
         options={{ title: "Doggy Details" }}
-      />
-      <Stack.Screen
-        name="TermsConditionScreen"
-        component={TermsConditionScreen}
-        options={{ title: "Terms and Condition" }}
       />
     </Stack.Navigator>
   );
