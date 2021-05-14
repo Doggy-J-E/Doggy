@@ -32,7 +32,7 @@ const WelcomeStack = () => {
           shadowOpacity: 0,
           borderBottomWidth: 0,
         },
-        headerTintColor: colors.white,
+        headerTintColor: colors.grey,
         headerTitleAlign: "center",
         headerTitleStyle: {
           fontWeight: "bold",
