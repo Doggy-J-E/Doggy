@@ -23,21 +23,36 @@ const HomeScreen = ({ navigation }) => {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    getSearchResultFromApi();
+    let isMounted = true;
+
+    getBreadInfoFromApi()
+      .then((data) => {
+        if (isMounted) {
+          setMasterDataSource(data);
+          setFilteredDataSource(data);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
-  const getSearchResultFromApi = async () => {
-    await getBreadInfoFromApi();
-  };
   const getBreadInfoFromApi = async () => {
-    fetch("https://api.thedogapi.com/v1/breeds")
-      .then((response) => response.json())
-      .then((json) => {
-        setFilteredDataSource(json);
-        setMasterDataSource(json);
-      })
-      .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
+    return new Promise(function (resolve, reject) {
+      fetch("https://api.thedogapi.com/v1/breeds")
+        .then((response) => response.json())
+        .then((json) => {
+          resolve(json);
+        })
+        .catch((error) => {
+          reject(error);
+        })
+        .finally(() => setLoading(false));
+    });
   };
 
   const searchFilterFunction = (text) => {
