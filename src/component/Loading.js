@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import React, { PureComponent } from "react";
 import { Animated, Easing, StyleSheet, View, Text, Image } from "react-native";
-import Ionicons from "react-native-vector-icons/Ionicons";
 
 import Indicator from "./Indicator";
 import colors from "../config/colors";
