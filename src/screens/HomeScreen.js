@@ -8,13 +8,12 @@ import {
   Image,
 } from "react-native";
 import { SearchBar } from "react-native-elements";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import Ionicons from "react-native-vector-icons/Ionicons";
 
 import colors from "../config/colors";
 import { scale, moderateScale, verticalScale } from "../config/scaling";
 import screen from "../config/screen";
 import Loading from "../component/Loading";
+import PetItem from "../component/PetItem";
 
 const HomeScreen = ({ navigation }) => {
   const [search, setSearch] = useState("");
@@ -75,31 +74,16 @@ const HomeScreen = ({ navigation }) => {
   const ItemView = ({ item, index }) => {
     return (
       <View key={index} style={styles.recordContainer}>
-        <TouchableOpacity
-          onPress={() =>
+        <PetItem
+          imageUrl={item.image.url}
+          name={item.name}
+          temperament={item.temperament}
+          action={() =>
             navigation.navigate("DetailsScreen", {
               dogInfo: item,
             })
           }
-        >
-          <View style={styles.row}>
-            <Image style={styles.image} source={{ uri: item.image.url }} />
-
-            <View style={styles.recordTextContainer}>
-              <Text style={styles.name}>{item.name}</Text>
-              <Text numberOfLines={3} style={styles.temperament}>
-                {item.temperament}
-              </Text>
-            </View>
-            <View style={styles.icon}>
-              <Ionicons
-                name={"chevron-forward-outline"}
-                color={colors.darkOrange}
-                size={moderateScale(25)}
-              />
-            </View>
-          </View>
-        </TouchableOpacity>
+        />
       </View>
     );
   };
@@ -158,37 +142,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.grey,
     borderRadius: moderateScale(10),
   },
-  recordTextContainer: {
-    width: scale(200),
-    height: verticalScale(100),
-    marginLeft: scale(10),
-    marginRight: scale(10),
-    marginTop: verticalScale(5),
-    flexDirection: "column",
-    justifyContent: "center",
-    flexGrow: 1,
-    width: 0,
-  },
-  row: {
-    flexDirection: "row",
-  },
-  image: {
-    width: scale(90),
-    height: verticalScale(90),
-    resizeMode: "stretch",
-    marginLeft: moderateScale(6),
-    marginTop: moderateScale(10),
-    borderRadius: moderateScale(10),
-  },
-  icon: {
-    alignSelf: "center",
-    marginRight: scale(5),
-  },
-  name: {
-    fontSize: moderateScale(20),
-    color: colors.darkOrange,
-    fontFamily: "ubuntu-bold",
-  },
+
   noResult: {
     alignItems: "center",
     justifyContent: "center",
@@ -202,10 +156,6 @@ const styles = StyleSheet.create({
   noResultImage: {
     width: scale(180),
     height: verticalScale(180),
-  },
-  temperament: {
-    fontSize: moderateScale(13),
-    fontFamily: "nunito-regular",
   },
 });
 
