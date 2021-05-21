@@ -14,7 +14,9 @@ class PetItem extends Component {
           <Image style={styles.image} source={{ uri: imageUrl }} />
 
           <View style={styles.recordTextContainer}>
-            <Text style={styles.name}>{name}</Text>
+            <Text numberOfLines={2} style={styles.name}>
+              {name}
+            </Text>
             <Text numberOfLines={3} style={styles.temperament}>
               {temperament}
             </Text>
