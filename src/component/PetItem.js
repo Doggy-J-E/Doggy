@@ -53,8 +53,8 @@ const styles = StyleSheet.create({
     width: scale(90),
     height: verticalScale(90),
     resizeMode: "stretch",
-    marginLeft: moderateScale(6),
-    marginTop: moderateScale(10),
+    marginLeft: scale(6),
+    marginTop: verticalScale(10),
     borderRadius: moderateScale(10),
   },
   arrow: {
@@ -68,12 +68,12 @@ const styles = StyleSheet.create({
     marginRight: scale(5),
   },
   name: {
-    fontSize: moderateScale(20),
+    fontSize: verticalScale(20),
     color: colors.darkOrange,
     fontFamily: "ubuntu-bold",
   },
   temperament: {
-    fontSize: moderateScale(13),
+    fontSize: verticalScale(13),
     fontFamily: "nunito-regular",
   },
 });
